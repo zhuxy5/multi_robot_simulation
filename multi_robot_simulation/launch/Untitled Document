@@ -1,0 +1,51 @@
+<!--
+    Start exploration package
+-->
+<node respawn="true" pkg="explorer" type="explorer" name="explorer" output="screen" ns="robot_1">
+    <!-- costmaps -->
+    <param name="robot_prefix" value="/robot_1"/>
+
+    <!-- simulation parameters -->
+    <param name="log_path" value="$(arg log_path)" />
+    <param name="robot_name" value="robot_1" />
+
+    <!-- params for move_base -->
+    <param name="base_link" value="robot_1/base_link" />
+    <param name="move_base_frame" value="map" />
+    <param name="wait_for_planner_result" value="1" />
+
+    <!-- exploration parameters -->
+    <param name="frontier_selection" value="5" />
+    <rosparam file="$(find explorer)/param/simulation_costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find explorer)/param/simulation_costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find explorer)/param/simulation_local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find explorer)/param/simulation_global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find explorer)/param/base_local_planner_params.yaml" command="load" />
+
+</node>
+
+<!--
+    Start exploration package
+-->
+<node respawn="true" pkg="explorer" type="explorer" name="explorer" output="screen" ns="robot_2">
+    <!-- costmaps -->
+    <param name="robot_prefix" value="/robot_2"/>
+
+    <!-- simulation parameters -->
+    <param name="log_path" value="$(arg log_path)" />
+    <param name="robot_name" value="robot_2" />
+
+    <!-- params for move_base -->
+    <param name="base_link" value="robot_2/base_link" />
+    <param name="move_base_frame" value="map" />
+    <param name="wait_for_planner_result" value="1" />
+
+    <!-- exploration parameters -->
+    <param name="frontier_selection" value="5" />
+    <rosparam file="$(find explorer)/param/simulation_costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find explorer)/param/simulation_costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find explorer)/param/simulation_local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find explorer)/param/simulation_global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find explorer)/param/base_local_planner_params.yaml" command="load" />
+
+</node>
